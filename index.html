@@ -45,10 +45,11 @@ a:hover{color:var(--violet)}
 
 /* onglets */
 .tabs{position:sticky;top:0;z-index:10;background:var(--blanc);border-bottom:1px solid var(--line)}
-.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin}
-.tabs [role="tab"]{flex:0 0 auto;font:inherit;font-weight:700;font-size:.93rem;background:transparent;color:var(--ink);border:0;border-bottom:4px solid transparent;padding:14px 14px 10px;cursor:pointer;white-space:nowrap}
-.tabs [role="tab"]:hover{color:var(--violet-deep)}
-.tabs [role="tab"][aria-selected="true"]{color:var(--violet-deep);border-bottom-color:var(--violet)}
+.tabs .wrap{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px;padding-bottom:12px}
+.tabs [role="tab"]{flex:0 0 auto;font:inherit;font-weight:700;font-size:.88rem;line-height:1.25;background:var(--tint-v);color:var(--ink);border:1px solid transparent;border-radius:999px;padding:8px 16px;cursor:pointer;text-align:center}
+.tabs [role="tab"]:hover{color:var(--violet-deep);border-color:var(--violet)}
+.tabs [role="tab"][aria-selected="true"]{background:var(--violet);color:#fff;border-color:var(--violet)}
+@media (max-width:640px){.tabs{position:static}.tabs .wrap{display:grid;grid-template-columns:1fr 1fr}.tabs [role="tab"]{white-space:normal;padding:8px 10px}}
 
 main{padding:30px 0 48px}
 [role="tabpanel"][hidden]{display:none}
